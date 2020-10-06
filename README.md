@@ -9,12 +9,53 @@ run the tests.
 
 ## ⚙️ Running with Cavy in Development
 
-CavyTester can be run on its own to demonstrate Cavy running in a sample React
+`CavyTester` can be run on its own to demonstrate Cavy running in a sample React
 Native app. However, it's also valuable to have it run against a local version
 of the `cavy` library when testing changes to Cavy itself. To do so, take the
 following steps:
 
-[TODO - these steps need testing]
+1. Clone the [Cavy repo](https://github.com/pixielabs/cavy):
+
+    `git clone https://github.com/pixielabs/cavy.git`
+
+2. Clone this repo:
+
+    `git clone https://github.com/pixielabs/cavy-tester.git`
+
+3. Install dependencies:
+
+    `cd cavy-tester`
+
+    `yarn install`
+
+3. Install [wml](https://github.com/wix/wml#readme) - an alternative to
+  symlinking (which React Native does not support):
+
+    `yarn global add wml`
+
+4. Link your local version of Cavy to `CavyTester`'s node modules:
+
+    `wml add {PATH_TO_CAVY} node_modules/cavy`
+
+5. Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html),
+  then:
+
+    `cd ios`
+
+    `pod install`
+
+    `cd ..`
+
+6. Run the tests!
+
+    `cavy run-ios --dev`
+
+    or
+
+    `cavy run-android --dev`
+
+You should then be able to make changes to your local version of Cavy, whilst
+running CavyTester tests in the background 🎉
 
 ## ✏️ Adding new Tests
 
