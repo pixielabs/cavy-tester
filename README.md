@@ -46,7 +46,11 @@ following steps:
 
     `cd ..`
 
-6. Run the tests!
+6. Start wml:
+
+    `wml start`
+
+7. Run the tests!
 
     `cavy run-ios --dev`
 
