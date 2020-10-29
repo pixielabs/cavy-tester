@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Text, TextInput } from 'react-native'
-import { useCavy } from 'cavy'
+import { useCavy, wrap } from 'cavy'
 
 export const key = 'Focus';
 
@@ -10,10 +10,11 @@ const textId = `${key}.Text`;
 export const Screen = () => {
   const [showHiddenMessage, setShowHiddenMessage] = useState(false);
   const generateTestHook = useCavy();
+  const WrappedTextnput = wrap(TextInput);
 
   return (
     <>
-      <TextInput
+      <WrappedTextnput
         ref={generateTestHook(textInputId)}
         onFocus={() => setShowHiddenMessage(true)}
       />
