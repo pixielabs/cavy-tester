@@ -37,8 +37,8 @@ following steps:
 
     `wml add {PATH_TO_CAVY} node_modules/cavy`
 
-5. Install [CocoaPods](https://guides.cocoapods.org/using/getting-started.html),
-  then:
+5. (For iOS testing) Install
+   [CocoaPods](https://guides.cocoapods.org/using/getting-started.html), then:
 
     `cd ios`
 
@@ -46,11 +46,15 @@ following steps:
 
     `cd ..`
 
-6. Start wml:
+6. Start wml in one terminal:
 
     `wml start`
 
-7. Run the tests!
+7. Start the Metro bundler in another terminal:
+
+    `npx react-native start`
+
+7. Run the tests in (yet) another terminal!
 
     `cavy run-ios --dev`
 
