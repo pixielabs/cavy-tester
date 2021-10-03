@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useCavy } from 'cavy'
 
 import scenarios from './scenarios'
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 // Create our HomeScreen which contains a button to each of our test scenarios.
 const HomeScreen = ({ navigation }) => {
@@ -38,6 +38,7 @@ export default function App() {
         {scenarios.map(scenario => {
           return (
             <Stack.Screen
+              key={scenario.key}
               name={scenario.key}
               component={scenario.Screen}
               options={{ title: scenario.label }} />
